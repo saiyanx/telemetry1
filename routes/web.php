@@ -15,7 +15,8 @@ Route::get('/', function () {
 
     $tasks = DB::table('fleet_summary')->get();
   //  return $tasks;
-    return view('welcome', compact('tasks'));
+  //  return view('welcome', compact('tasks'));
+  return view('layouts/master');
 });
 
 Auth::routes();
@@ -41,12 +42,13 @@ Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 */
 Route::resource('/manage', 'ManageUsersController');
 
-Route::get('/diagrams', 'AppController@diagrams');
+Route::get('/groups', 'AppController@groups');
 Route::get('/reports', 'AppController@reports');
-Route::get('/events', 'AppController@events');
+Route::get('/virtualsite', 'AppController@virtualSite');
 Route::get('/settings', 'AppController@settings');
-Route::get('/help', 'AppController@help');
+Route::get('/trends', 'AppController@trends');
 Route::get('/contact', 'AppController@contact');
+Route::get('/gauge', 'AppController@gauge');
 
 Route::get('/fleet', 'FleetController@index');
 Route::get('/summary', 'FleetController@Summary');

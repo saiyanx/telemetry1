@@ -1,7 +1,6 @@
 @extends('layouts/master')
 
-@section ('content')
-
+@section ('header')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="float-left">
@@ -12,13 +11,15 @@
         </div>
     </div>
 </div>
-<hr>
+@endsection
+
+@section ('content')
 
 <div style="overflow-y:scroll">
   <div class="table-responsive" >
-   <table class="table">
-
-     <thead class="thead-light">
+    <div class="table-wrapper-2" >
+       <table id="myTable" class="table-bordered table-hover">
+        <thead>
        <tr>
          <?php
          //Get table headers and store it in columns array
@@ -37,7 +38,6 @@
         ?>
 
 
-
         <?php  foreach($columndata as $data):?>
             <tr>
                 <?php foreach($columns as $column):?>
@@ -47,7 +47,7 @@
          <?php endforeach; ?>
 
 
-   </body>
+    </body>
    </table>
   </div>
 </div>

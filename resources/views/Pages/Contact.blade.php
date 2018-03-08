@@ -1,8 +1,10 @@
 @extends('layouts/master')
 
-@section ('content')
+@section('header')
+<h2>Contact</h2>
+@endsection
 
-<h1>Contact</h1>
+@section ('content')
 
 
 @endsection

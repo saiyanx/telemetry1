@@ -12,7 +12,6 @@
         <p>Are you sure about this?</p>
       </div>
       <div class="modal-footer">
-
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <form action="{{action('ManageUsersController@destroy', $member->id)}}" method="post">
            {{csrf_field()}}

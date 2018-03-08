@@ -1,21 +1,26 @@
-@extends('layouts.master')
+@extends('layouts/master')
+
+@section('PanelTitle')
+User
+@endsection
+
+@section('header')
+  <div class="row">
+    <div class="col-lg-12 margin-tb">
+          <div class="pull-left">
+              <h2>{{ ucfirst($member->first_name)." ".ucfirst($member->last_name)}} details</h2>
+          </div>
+          <div class="pull-right">
+              <a class="btn btn-primary" href="{{ route('manage.index') }}"> Back</a>
+          </div>
+    </div>  
+  </div>
+@endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="float-left">
-                <h2>{{ ucfirst($member->first_name)." ".ucfirst($member->last_name)}} details</h2>
-            </div>
-            <div class="float-right">
-                <a class="btn btn-primary" href="{{ route('manage.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-9 col-lg-9 ">
-                 <table class="table table-condensed">
-                   <tbody>
+
+<table class="table table-bordered bg-light ">
+  <thead class="bg-dark">
                      <tr>
                        <td><strong>First Name:</strong></td>
                        <td> {{ ucfirst($member->first_name)}}</td>
@@ -48,6 +53,5 @@
 
                    </tbody>
                  </table>
-    </div>
-  </div>
+
 @endsection

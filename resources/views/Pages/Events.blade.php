@@ -1,8 +1,11 @@
 @extends('layouts/master')
 
+@section ('header')
+<h2>Events</h2>
+@endsection
+
 @section ('content')
 
-<h1>Events</h1>
 
 
 @endsection

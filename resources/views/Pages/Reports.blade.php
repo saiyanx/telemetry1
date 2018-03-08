@@ -1,9 +1,22 @@
 @extends('layouts/master')
 
+@section('header')
+<h2>Reports</h2>
+@endsection
+
 @section ('content')
 
-<h1>Reports</h1>
-<hr><br>
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <form method="GET" action="{{route('export.file')}}">
   {{csrf_field()}}
 <div class="form-group">
@@ -23,6 +36,11 @@
            <?php endforeach; ?>
 
   </select>
+
+<br>  <label for="sel2"><strong>Select File format:</strong></label><br>
+  <input type="checkbox" name="format" value="xlsx" checked>Excel(.xlsx)<br>
+  <input type="checkbox" name="format" value="PDF">PDF<br>
+
 </div>
 <button type="submit" class="btn btn-primary">Export Data</button>
 </form>

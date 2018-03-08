@@ -114,10 +114,11 @@ function sortTable(n) {
 </script>
 @endsection
 
-@section ('content')
-
+@section('header')
 <h2>Fleet Summary</h2>
-<hr>
+@endsection
+
+@section ('content')
 
 
 <!-- Row start -->
@@ -148,6 +149,7 @@ function sortTable(n) {
 
 <br>
 <br>
+
   <div class="table-wrapper-2" >
      <table id="myTable" class="table-bordered table-hover">
       <thead>
@@ -187,7 +189,7 @@ function sortTable(n) {
 
        @foreach($fleets as $fleet)
         <tr>
-            <td>{{ $fleet->Engine_RPM}}</td>
+            <td><a href="/gauge">{{ $fleet->Engine_RPM}}</a></td>
             <td>{{ $fleet->Engine_Lube_Oil_Temperature}}</td>
             <td>{{ $fleet->Low_Lube_Oil_Level}}</td>
             <td>{{ $fleet->Engine_Lube_Oil_Pressure}}</td>

@@ -1,8 +1,11 @@
 @extends('layouts/master')
 
-@section ('content')
+@section('header')
+<h2>Help</h2>
+@endsection
 
-<h1>Help</h1>
+
+@section ('content')
 
 
 @endsection

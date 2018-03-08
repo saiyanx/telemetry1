@@ -1,12 +1,14 @@
 @extends('layouts.master')
 
+@section('header')
+  <h2>Admin Dashboard</h2>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="panel panel-default">
-                <h2><div class="panel-heading">Admin Dashboard</div></h2>
-                <hr>
                 <div class="panel-body">
                   <table class="table table-bordered bg-light ">
                     <thead class="bg-dark" style="color: white">
@@ -33,7 +35,7 @@
                                      <td><input type="checkbox" name="role_supervisor" {{ $user->hasRole('Supervisor') ? 'checked' : '' }} ></td>
                                      <td><input type="checkbox" name="role_admin"  {{ $user->hasRole('Administrator') ? 'checked' : '' }} ></td>
 
-                                     <td><button type="submit">Assign Roles</button></td>
+                                     <td><button class="btn btn-primary" type="submit">Assign Roles</button></td>
                                  </form>
 
                              </tr>
